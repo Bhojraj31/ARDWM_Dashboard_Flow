@@ -12,7 +12,7 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={{flex:1, justifyContent:'center', alignItems:'center'}}>
       <Text style={{fontSize:30, fontWeight:'bold'}}>
-        7773
+        9777
       </Text>
     </SafeAreaView>
   );
