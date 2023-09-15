@@ -1,20 +1,15 @@
-import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React,{useEffect} from 'react';
+import { StyleSheet, } from 'react-native';
+import AppNavigator from './AppNavigator';
+import BootSplash from "react-native-bootsplash";
+
 function App(): JSX.Element {
+  useEffect(() => {
+    BootSplash.hide({ fade: true });
+  }, [])
+
   return (
-    <SafeAreaView style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-      <Text style={{fontSize:30, fontWeight:'bold'}}>
-        9777
-      </Text>
-    </SafeAreaView>
+    <AppNavigator />      
   );
 }
 
