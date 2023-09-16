@@ -2,8 +2,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import React from 'react'
 import { Text, View } from 'react-native'
 import Main from './Main'
-// import About from './About'
 import ContactUs from './ContactUs'
+import About from './About'
 
 const Drawer = createDrawerNavigator()
 function DrawerNav() {
@@ -20,8 +20,8 @@ function DrawerNav() {
         }
       }}
     >
-      <Drawer.Screen name='Main' component={Main} options={{
-        headerTitle: 'Bhojraj Singh Shekhawat',
+      <Drawer.Screen name='Dashboard' component={Main} options={{
+        headerTitle: 'Bhojraj Wealth Strategy',
         headerStyle: {
           backgroundColor: 'black', 
         },

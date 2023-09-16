@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import DrawerNav from '../DrawerNavigator/DrawerNav'
+import DrawerNav from '../drawerNavigator/DrawerNav'
 
 function Dashboard() {
   return (

@@ -1,11 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import TopNav from '../TopNavigator/TopNav'
+import TopNav from '../topNavigator/TopNav'
+import Carousels from '../carousels/Carousels'
 
 const Screen2 = () => {
   return (
-    <View style={{flex:1}}>
-      <TopNav/>
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
+        <TopNav />
+      </View>
+      {/* <View style={{ flex: 1 }}>
+        <Carousels />
+      </View> */}
     </View>
   )
 }

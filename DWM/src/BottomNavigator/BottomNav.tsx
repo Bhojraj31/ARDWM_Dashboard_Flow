@@ -11,6 +11,7 @@ const Bottom = createBottomTabNavigator();
 const BottomNav = () => {
   return (
     <Bottom.Navigator
+      initialRouteName='Screen2'
       screenOptions={{
         tabBarLabelStyle: {
           fontSize: 15,

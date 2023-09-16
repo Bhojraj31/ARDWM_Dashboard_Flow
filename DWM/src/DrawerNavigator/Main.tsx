@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import BottomNav from '../BottomNavigator/BottomNav'
+import BottomNav from '../bottomNavigator/BottomNav'
 
 const Main = () => {
   return (

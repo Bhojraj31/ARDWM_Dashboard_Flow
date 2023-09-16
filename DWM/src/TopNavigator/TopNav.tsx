@@ -20,6 +20,9 @@ const TopNav = () => {
                 tabBarStyle: {
                     backgroundColor: 'black',
                 },
+                tabBarIndicatorStyle: {
+                    backgroundColor: 'grey', 
+                },
                 tabBarIconStyle: {
                     justifyContent: 'center',
                     alignItems: 'center'
