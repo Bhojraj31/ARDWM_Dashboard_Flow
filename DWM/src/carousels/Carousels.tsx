@@ -1,22 +1,35 @@
 import { View, Text, FlatList, Dimensions, TouchableOpacity } from 'react-native';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const { height, width } = Dimensions.get('window');
 
 const Carousels = () => {
-  const [data, setData] = useState([1, 1, 1, 1, 1, 1]);
-  const [currentIndex, setCurrentIndex] = useState<number>(1); 
+  const [data, setData] = useState([1, 2, 3, 4, 5, 6]);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const flatListRef = useRef<FlatList | null>(null);
 
   const handleScrollEnd = (event: any) => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
-    const newIndex = Math.round(contentOffsetX / width); // Round to the nearest index
+    const newIndex = Math.round(contentOffsetX / width);
     setCurrentIndex(newIndex);
   };
 
+  useEffect(() => {
+    if (currentIndex < 0) {
+      flatListRef.current?.scrollToOffset({
+        animated: false,
+        offset: (data.length - 1) * width,
+      });
+      setCurrentIndex(data.length - 1);
+    } else if (currentIndex >= data.length) {
+      flatListRef.current?.scrollToOffset({ animated: false, offset: 0 });
+      setCurrentIndex(0);
+    }
+  }, [currentIndex, data]);
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' , backgroundColor:'black' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black' }}>
       <View
         style={{
           height: height / 2 + 150,
@@ -26,13 +39,18 @@ const Carousels = () => {
       >
         <FlatList
           ref={(ref) => (flatListRef.current = ref)}
-          data={data}
+          data={[...data, ...data, ...data]} // Add extra items to create the loop effect
           showsHorizontalScrollIndicator={false}
           pagingEnabled
           horizontal
-          initialScrollIndex={1} 
-          initialNumToRender={2} 
           onMomentumScrollEnd={handleScrollEnd}
+          keyExtractor={(item, index) => index.toString()}
+          initialScrollIndex={data.length}
+          getItemLayout={(data, index) => ({
+            length: width - 60,
+            offset: (width - 60) * index,
+            index,
+          })}
           renderItem={({ item, index }) => {
             return (
               <View
@@ -53,7 +71,7 @@ const Carousels = () => {
                   }}
                 >
                   <Text>
-                    Hello
+                    {item}
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -67,8 +85,8 @@ const Carousels = () => {
           flexDirection: 'row',
           width: width,
           justifyContent: 'center',
-          position:'absolute',
-          bottom:20, 
+          position: 'absolute',
+          bottom: 20,
         }}
       >
         {data.map((item, index) => {

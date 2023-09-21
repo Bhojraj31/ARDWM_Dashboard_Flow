@@ -3,7 +3,7 @@ import React from 'react'
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 import { Checkbox } from 'react-native-paper';
 
-const Screen1 = () => {
+const Strategy = () => {
   const [checked1, setChecked1] = React.useState(false);
   const [checked2, setChecked2] = React.useState(false);
   return (
@@ -113,16 +113,16 @@ const Screen1 = () => {
       
       
       <View style={{ justifyContent: 'center', alignItems: 'center',position: 'absolute', bottom: 15, left:85 }} >
-        <Pressable>
+        <TouchableOpacity >
           <Text style={{ color: '#0987ed', fontSize: 18 }} >
             View Recoommended Portfolio
           </Text>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </View>
   )
 }
 
-export default Screen1
+export default Strategy
 
 const styles = StyleSheet.create({})

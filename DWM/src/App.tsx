@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 import { StyleSheet, } from 'react-native';
-import AppNavigator from './AppNavigator';
+import AppNavigator from './routes/AppNavigator';
 import BootSplash from "react-native-bootsplash";
 
 function App(): JSX.Element {
