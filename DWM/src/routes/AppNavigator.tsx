@@ -2,16 +2,13 @@ import { DarkTheme, NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 import Home from '../screens/Home';
 import DrawerNav from './DrawerNavigation/DraweNav';
-import Profile from '../screens/Profile';
-import Activity from '../screens/Activity';
-import Transact from '../screens/Transact';
+import Profile from '../screens/DrawerNavScreen/Profile';
+import Activity from '../screens/TopNavScreen/Activity';
+import Transact from '../screens/TopNavScreen/Transact';
 import BottomNav from './BottomNavigation/BottomNav';
-
-import { createDrawerNavigator } from '@react-navigation/drawer'
-import Dashboard from '../screens/Dashboard';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import StartApp from '../screens/StartApp';
-import Portfolio from '../screens/Portfolio';
+import Portfolio from '../screens/TopNavScreen/Portfolio';
+import CustomHeader from '../components/CustomHeader';
 
 const Stack = createNativeStackNavigator();
 function AppNavigator() {
@@ -26,8 +23,15 @@ function AppNavigator() {
           }}
         />
         <Stack.Screen
-          name='StartApp'
-          component={StartApp}
+          name='DrawerNav'
+          component={DrawerNav}
+          options={{
+            headerShown:false
+          }}
+        />
+        <Stack.Screen
+          name='BottomNav'
+          component={BottomNav}
           options={{
             headerShown:false
           }}
@@ -35,18 +39,38 @@ function AppNavigator() {
         <Stack.Screen
           name='Profile'
           component={Profile}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="Profile" />
+            ),
+          })}
         />
         <Stack.Screen
           name='Portfolio'
           component={Portfolio}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="Portfolio" />
+            ),
+          })}
         />
         <Stack.Screen
           name='Activity'
           component={Activity}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="Activity" />
+            ),
+          })}
         />
         <Stack.Screen
           name='Transact'
           component={Transact}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="Transact" />
+            ),
+          })}
         />
       </Stack.Navigator>
 

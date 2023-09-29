@@ -8,10 +8,13 @@ const Strategy = () => {
   const [checked2, setChecked2] = React.useState(false);
   return (
     <View style={{ flex: 1, backgroundColor: 'black', padding: 10 }}>
+      
+      {/* Card here */}
       <Card style={{ backgroundColor: '#202833', padding: 10 }} >
 
+        {/* 1-Row */}
         <Card.Content style={{ alignSelf: 'center' }}>
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{ flexDirection: 'row' , alignSelf:'center'}}>
             <Text variant="titleLarge" style={{ color: 'white', fontSize: 28 }} >
               9.8
             </Text>
@@ -20,6 +23,7 @@ const Strategy = () => {
           <Text variant="bodyMedium" style={{ color: 'grey' }}>Wealth Target</Text>
         </Card.Content>
 
+        {/* 2-Row */}
         <Card.Content style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }} >
           <View>
             <View style={{ flexDirection: 'row' }}>
@@ -50,6 +54,7 @@ const Strategy = () => {
           </View>
         </Card.Content>
 
+        {/* 3-Row */}
         <Card.Content style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }} >
           <View style={{ flexDirection: 'row' }}>
             <Checkbox
@@ -87,7 +92,8 @@ const Strategy = () => {
             </View>
           </View>
         </Card.Content>
-
+        
+        {/* 4-Row */}
         <Card.Content style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }} >
           <View>
             <Text variant="titleLarge" style={{ color: 'white', fontSize: 28 }} >
@@ -111,11 +117,11 @@ const Strategy = () => {
         </Card.Content>
       </Card>
       
-      
+      {/* View recommended Portfolio */}
       <View style={{ justifyContent: 'center', alignItems: 'center',position: 'absolute', bottom: 15, left:85 }} >
         <TouchableOpacity >
           <Text style={{ color: '#0987ed', fontSize: 18 }} >
-            View Recoommended Portfolio
+            View Recommended Portfolio
           </Text>
         </TouchableOpacity>
       </View>
