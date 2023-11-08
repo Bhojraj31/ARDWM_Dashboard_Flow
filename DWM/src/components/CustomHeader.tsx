@@ -13,9 +13,11 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ navigation, title }) => {
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <IconButton icon="chevron-left" size={30} iconColor='#00BFFF' />
             </TouchableOpacity>
-            <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18 }}>
-                {title}
-            </Text>
+            <View style={{ width: 350, justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18 }}>
+                    {title}
+                </Text>
+            </View>
         </View>
     );
 };
