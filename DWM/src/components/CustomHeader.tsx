@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Image, Text } from 'react-native';
 import { IconButton } from 'react-native-paper';
+import { useTheme } from '../theme/ThemeProvider';
 
 interface CustomHeaderProps {
     navigation: any;
@@ -8,13 +9,16 @@ interface CustomHeaderProps {
 }
 
 const CustomHeader: React.FC<CustomHeaderProps> = ({ navigation, title }) => {
+
+    const { theme } = useTheme();
+    const { label, button, background } = theme.colors;
     return (
-        <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: '#000' }}>
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-                <IconButton icon="chevron-left" size={30} iconColor='#00BFFF' />
+        <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: background }}>
+            <TouchableOpacity style={{ flex: .1 }} onPress={() => navigation.goBack()}>
+                <IconButton icon="chevron-left" size={30} iconColor={button} />
             </TouchableOpacity>
-            <View style={{ width: 350, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18 }}>
+            <View style={{ flex: .8, justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ color: label, fontWeight: 'bold', fontSize: 18 }}>
                     {title}
                 </Text>
             </View>

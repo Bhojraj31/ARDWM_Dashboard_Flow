@@ -1,56 +1,60 @@
-import { Pressable, StyleSheet, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { Avatar, Button, Card, Text } from 'react-native-paper';
+import { Card, Text } from 'react-native-paper';
 import { Checkbox } from 'react-native-paper';
+import { useTheme } from '../../theme/ThemeProvider';
 
 const Strategy = () => {
+
+  const { theme } = useTheme();
+  const { button, text, background } = theme.colors;
   const [checked1, setChecked1] = React.useState(false);
   const [checked2, setChecked2] = React.useState(false);
   return (
-    <View style={{ flex: 1, backgroundColor: 'black', padding: 10 }}>
-      
+    <View style={{ flex: 1, backgroundColor: background, padding: 5 }}>
+
       {/* Card here */}
-      <Card style={{ backgroundColor: '#202833', padding: 10 }} >
+      <Card style={{ backgroundColor: text, padding: 10 }} >
 
         {/* 1-Row */}
         <Card.Content style={{ alignSelf: 'center' }}>
-          <View style={{ flexDirection: 'row' , alignSelf:'center'}}>
-            <Text variant="titleLarge" style={{ color: 'white', fontSize: 28 }} >
+          <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+            <Text variant="titleLarge" style={{ color: '#fff', fontWeight:'bold', fontSize: 28 }} >
               9.8
             </Text>
-            <Text variant="titleLarge" style={{ color: 'white', fontSize: 15 }} > Cr </Text>
+            <Text variant="titleLarge" style={{ color: '#fff', fontWeight:'bold', fontSize: 15 }} > Cr </Text>
           </View>
-          <Text variant="bodyMedium" style={{ color: 'grey' }}>Wealth Target</Text>
+          <Text variant="bodyMedium" style={{ color: '#ffffff' }}>Wealth Target</Text>
         </Card.Content>
 
         {/* 2-Row */}
         <Card.Content style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }} >
           <View>
             <View style={{ flexDirection: 'row' }}>
-              <Text variant="titleLarge" style={{ color: '#0987ed', fontSize: 28 }} >
+              <Text variant="titleLarge" style={{ color: button, fontSize: 28 }} >
                 18.0
               </Text>
-              <Text variant="titleLarge" style={{ color: '#0987ed', fontSize: 15 }} > Lacs </Text>
+              <Text variant="titleLarge" style={{ color: button, fontSize: 15 }} > Lacs </Text>
             </View>
-            <Text variant="bodyMedium" style={{ color: 'grey' }}>Current Wealth</Text>
+            <Text variant="bodyMedium" style={{ color: '#ffffff' }}>Current Wealth</Text>
           </View>
           <View>
             <View style={{ flexDirection: 'row' }}>
-              <Text variant="titleLarge" style={{ color: '#0987ed', fontSize: 28 }} >
+              <Text variant="titleLarge" style={{ color: button, fontSize: 28 }} >
                 1.0
               </Text>
-              <Text variant="titleLarge" style={{ color: '#0987ed', fontSize: 15 }} > Lacs </Text>
+              <Text variant="titleLarge" style={{ color: button, fontSize: 15 }} > Lacs </Text>
             </View>
-            <Text variant="bodyMedium" style={{ color: 'grey' }}>Annual Saving</Text>
+            <Text variant="bodyMedium" style={{ color: '#ffffff' }}>Annual Saving</Text>
           </View>
           <View>
             <View style={{ flexDirection: 'row' }}>
-              <Text variant="titleLarge" style={{ color: '#0987ed', fontSize: 28 }} >
+              <Text variant="titleLarge" style={{ color: button, fontSize: 28 }} >
                 25
               </Text>
-              <Text variant="titleLarge" style={{ color: '#0987ed', fontSize: 15 }} > Years </Text>
+              <Text variant="titleLarge" style={{ color: button, fontSize: 15 }} > Years </Text>
             </View>
-            <Text variant="bodyMedium" style={{ color: 'grey' }}>TimeFrame</Text>
+            <Text variant="bodyMedium" style={{ color: '#ffffff' }}>TimeFrame</Text>
           </View>
         </Card.Content>
 
@@ -65,10 +69,10 @@ const Strategy = () => {
             />
             <View style={{ flexDirection: 'column' }} >
 
-              <Text style={{ color: 'grey' }} >
+              <Text style={{ color: '#ffffff' }} >
                 Equity Market
               </Text>
-              <Text style={{ color: 'grey' }} >
+              <Text style={{ color: '#ffffff' }} >
                 Protection
               </Text>
             </View>
@@ -83,23 +87,23 @@ const Strategy = () => {
             />
             <View style={{ flexDirection: 'column' }} >
 
-              <Text style={{ color: 'grey' }} >
+              <Text style={{ color: '#ffffff' }} >
                 Plan B with NON-PP Structured
               </Text>
-              <Text style={{ color: 'grey' }} >
+              <Text style={{ color: '#ffffff' }} >
                 Protection
               </Text>
             </View>
           </View>
         </Card.Content>
-        
+
         {/* 4-Row */}
         <Card.Content style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }} >
           <View>
-            <Text variant="titleLarge" style={{ color: 'white', fontSize: 28 }} >
+            <Text variant="titleLarge" style={{ color: '#fff', fontWeight:'bold', fontSize: 28 }} >
               60
             </Text>
-            <Text style={{ color: 'grey' }} >
+            <Text style={{ color: text }} >
               Equity MF
             </Text>
           </View>
@@ -107,20 +111,20 @@ const Strategy = () => {
 
           </View>
           <View>
-            <Text variant="titleLarge" style={{ color: 'white', fontSize: 28 }} >
+            <Text variant="titleLarge" style={{ color: '#fff', fontWeight:'bold', fontSize: 28 }} >
               40
             </Text>
-            <Text style={{ color: 'grey' }} >
+            <Text style={{ color: text }} >
               Debt MF
             </Text>
           </View>
         </Card.Content>
       </Card>
-      
+
       {/* View recommended Portfolio */}
-      <View style={{ justifyContent: 'center', alignItems: 'center',position: 'absolute', bottom: 15, left:85 }} >
+      <View style={{ justifyContent: 'center', alignItems: 'center', position: 'absolute', bottom: 15, left: 85 }} >
         <TouchableOpacity >
-          <Text style={{ color: '#0987ed', fontSize: 18 }} >
+          <Text style={{ color: button, fontSize: 18 }} >
             View Recommended Portfolio
           </Text>
         </TouchableOpacity>

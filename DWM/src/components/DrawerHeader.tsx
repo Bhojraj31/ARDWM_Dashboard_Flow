@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, Image, Text } from 'react-native';
 import { IconButton, ActivityIndicator } from 'react-native-paper';
+import { useTheme } from '../theme/ThemeProvider';
 
 interface CustomHeaderProps {
     navigation: any;
@@ -9,7 +10,10 @@ interface CustomHeaderProps {
 
 const DrawerHeader: React.FC<CustomHeaderProps> = ({ navigation, title }) => {
     const { openDrawer } = navigation;
-
+    
+    const { theme } = useTheme();
+    const { label, button, background } = theme.colors;
+    
     const [refreshing, setRefreshing] = useState(false);
 
     const handleRefreshPress = () => {
@@ -17,30 +21,30 @@ const DrawerHeader: React.FC<CustomHeaderProps> = ({ navigation, title }) => {
 
         setTimeout(() => {
             setRefreshing(false);
-        }, 2000); 
+        }, 3000);
     };
 
     return (
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#000' }}>
-            <View style={{ width: '75%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: background }}>
+            <View style={{ width: '70%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                 <TouchableOpacity onPress={openDrawer}>
-                    <IconButton icon="menu" size={30} iconColor='#00BFFF' />
+                    <IconButton icon="menu" size={25} iconColor={button} />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 20 }}>
+                <Text style={{ color: label, fontWeight: 'bold', fontSize: 19 }}>
                     {title}
                 </Text>
             </View>
 
-            <View style={{ paddingRight: 10, flexDirection: 'row' }}>
+            <View style={{ paddingRight: 0, width: '30%', alignItems: 'center', justifyContent: 'space-around', flexDirection: 'row' }}>
                 {refreshing ? (
-                    <ActivityIndicator animating={true} color='#00BFFF' size={18} style={{margin: null, marginRight:10}}/>
+                    <ActivityIndicator animating={true} color={button} size={20} style={{ margin: null, }} />
                 ) : (
                     <TouchableOpacity onPress={handleRefreshPress}>
-                        <IconButton icon="refresh" size={25} iconColor='#00BFFF' style={{ margin: null}} />
+                        <IconButton icon="refresh" size={25} iconColor={button} style={{ margin: null }} />
                     </TouchableOpacity>
                 )}
                 <TouchableOpacity onPress={openDrawer}>
-                    <IconButton icon="account-group" size={20} iconColor='#fff' style={{ margin: null, borderRadius: 50, backgroundColor: '#00BFFF' }} />
+                    <IconButton icon="account-group" size={18} iconColor='#fff' style={{ margin: null, borderRadius: 50, backgroundColor: button }} />
                 </TouchableOpacity>
             </View>
         </View>

@@ -3,16 +3,15 @@ import BottomNav from '../BottomNavigation/BottomNav'
 import Profile from '../../screens/DrawerNavScreen/Profile'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CustomHeader from '../../components/CustomHeader';
-import Logout from '../../screens/DrawerNavScreen/Logout';
 import Videos from '../../screens/DrawerNavScreen/Videos';
 import Referral from '../../screens/DrawerNavScreen/Referral';
 import Reports from '../../screens/DrawerNavScreen/Reports';
 import DrawerHeader from '../../components/DrawerHeader';
+import CustomDrawer from '../../components/CustomDrawer';
+import { useTheme } from '../../theme/ThemeProvider';
 
 
 const Drawer = createDrawerNavigator();
-
-
 const Empty = () => {
   return (
     <BottomNav />
@@ -20,32 +19,28 @@ const Empty = () => {
 }
 
 function DrawerNav() {
+
+  const { theme } = useTheme(); 
+  const { text, drawerBackground } = theme.colors;
+
   return (
     <Drawer.Navigator
+      drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
         drawerType: "slide",
-        drawerStyle: {
-          backgroundColor: 'black',
-        },
+        drawerActiveTintColor: drawerBackground,
         drawerLabelStyle: {
-          fontSize: 17,
-          color: 'white',
+          fontSize: 16,
+          color: text,
         }
       }}
     >
       <Drawer.Screen
         name='Dashboard'
         component={Empty}
-        // options={{
-        //   headerTitle: 'Bhojraj Wealth Strategy',
-        //   headerStyle: {
-        //     backgroundColor: 'black',
-        //   },
-        //   headerTintColor: 'blue',
-        // }}
         options={({ navigation }) => ({
           header: () => (
-            <DrawerHeader navigation={navigation} title="Bhojraj Wealth Stategy" />
+            <DrawerHeader navigation={navigation} title="Bhojraj Wealth Strategy" />
           ),
         })}
       />
@@ -82,15 +77,6 @@ function DrawerNav() {
         options={({ navigation }) => ({
           header: () => (
             <CustomHeader navigation={navigation} title="Reports" />
-          ),
-        })}
-      />
-      <Drawer.Screen
-        name='Logout'
-        component={Logout}
-        options={({ navigation }) => ({
-          header: () => (
-            <CustomHeader navigation={navigation} title="Logout" />
           ),
         })}
       />

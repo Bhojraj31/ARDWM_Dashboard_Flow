@@ -1,10 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { useTheme } from '../../theme/ThemeProvider';
 
 const Messages = () => {
+  
+  const { theme } = useTheme();
+  const { label,background } = theme.colors;
   return (
-    <View style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'black'}}>
-      <Text style={{fontSize:30, color:'white'}}>Messages</Text>
+    <View style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor:background}}>
+      <Text style={{fontSize:30, color:label}}>Messages</Text>
     </View>
   )
 }

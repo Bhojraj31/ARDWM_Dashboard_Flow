@@ -9,31 +9,33 @@ import BottomNav from './BottomNavigation/BottomNav';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Portfolio from '../screens/TopNavScreen/Portfolio';
 import CustomHeader from '../components/CustomHeader';
+import CustomCard from '../components/CustomCard';
+import StartApp from '../screens/StartApp';
 
 const Stack = createNativeStackNavigator();
 function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='StartApp'>
         <Stack.Screen
           name='Home'
           component={Home}
           options={{
-            headerShown:false
+            headerShown: false
           }}
         />
         <Stack.Screen
           name='DrawerNav'
           component={DrawerNav}
           options={{
-            headerShown:false
+            headerShown: false
           }}
         />
         <Stack.Screen
           name='BottomNav'
           component={BottomNav}
           options={{
-            headerShown:false
+            headerShown: false
           }}
         />
         <Stack.Screen
@@ -69,6 +71,15 @@ function AppNavigator() {
           options={({ navigation }) => ({
             header: () => (
               <CustomHeader navigation={navigation} title="Transact" />
+            ),
+          })}
+        />
+        <Stack.Screen
+          name='StartApp'
+          component={StartApp}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="StartApp" />
             ),
           })}
         />
