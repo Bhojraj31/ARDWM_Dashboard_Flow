@@ -1,7 +1,16 @@
-
-/*
-* @Copyright notice:- AnandRathi IT Pvt. Ltd. This code is intellectual property of AnandRathi Group, and is protected by the relevant laws.
-* */
+/*  Copyright: AnandRathi IT Pvt. Ltd. This code is intellectual property of AnandRathi Group, and is protected by the relevant laws */
+/**
+ * @param - NA
+ * @return -- NA
+ * @Name:- ThemeProvider
+ * @Type:- Functional Component
+ * @Role:- For showing ThemeProvider
+ * @Sprint:- 
+ * @Created by:- Bhojraj Singh Shekhawat
+ * @Created on:-  01-11-2023
+ * @Last Modified by:- No
+ * @Last modified on:- No
+ */
 
 import React, { createContext, useContext, ReactNode } from 'react';
 import { Theme, lightTheme, darkTheme } from './Themes';

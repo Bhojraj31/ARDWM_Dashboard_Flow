@@ -1,9 +1,24 @@
+/*  Copyright: AnandRathi IT Pvt. Ltd. This code is intellectual property of AnandRathi Group, and is protected by the relevant laws */
+/**
+ * @param - NA
+ * @return -- NA
+ * @Name:- App
+ * @Type:- Functional Component
+ * @Role:- For showing Root component
+ * @Sprint:- 
+ * @Created by:- Bhojraj Singh Shekhawat
+ * @Created on:-  01-11-2023
+ * @Last Modified by:- No
+ * @Last modified on:- No
+ */
+
 import React, { useEffect } from 'react';
 import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 import AppNavigator from './routes/AppNavigator';
 import BootSplash from "react-native-bootsplash";
 import { background } from './assets/constants/ColorConstants';
 import { ThemeProvider } from './theme/ThemeProvider';
+import { PaperProvider } from 'react-native-paper';
 
 function App(): JSX.Element {
   useEffect(() => {
@@ -19,9 +34,12 @@ function App(): JSX.Element {
         barStyle={'light-content'}
       />
       <ThemeProvider>
-        <AppNavigator />
+        <PaperProvider>
+          <AppNavigator />
+        </PaperProvider>
       </ThemeProvider>
     </SafeAreaView>
+    
   );
 }
 

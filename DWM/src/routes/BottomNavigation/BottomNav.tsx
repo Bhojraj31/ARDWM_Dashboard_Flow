@@ -1,3 +1,17 @@
+/*  Copyright: AnandRathi IT Pvt. Ltd. This code is intellectual property of AnandRathi Group, and is protected by the relevant laws */
+/**
+ * @param - NA
+ * @return -- NA
+ * @Name:- BottomNav
+ * @Type:- Functional Component
+ * @Role:- For showing BottomNav
+ * @Sprint:- 
+ * @Created by:- Bhojraj Singh Shekhawat
+ * @Created on:-  01-11-2023
+ * @Last Modified by:- No
+ * @Last modified on:- No
+ */
+
 import { StyleSheet } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -62,7 +76,6 @@ const BottomNav = () => {
           ),
         }}
       />
-
       <Bottom.Screen
         name='Messages'
         component={Messages}

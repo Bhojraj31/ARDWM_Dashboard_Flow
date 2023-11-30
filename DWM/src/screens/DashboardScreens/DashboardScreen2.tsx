@@ -1,3 +1,17 @@
+/*  Copyright: AnandRathi IT Pvt. Ltd. This code is intellectual property of AnandRathi Group, and is protected by the relevant laws */
+/**
+ * @param - NA
+ * @return -- NA
+ * @Name:- DashboardScreen2
+ * @Type:- Functional Component
+ * @Role:- For showing DashboardScreen2
+ * @Sprint:- 
+ * @Created by:- Bhojraj Singh Shekhawat
+ * @Created on:-  01-11-2023
+ * @Last Modified by:- No
+ * @Last modified on:- No
+ */
+
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CustomCard from '../../components/CustomCard'
@@ -6,7 +20,7 @@ import CircularSlideGraph from '../../components/CircularSliderGraph'
 const DashboardScreen2 = () => {
     return (
         <View style={{ flex: 1 }}>
-            <View style={{ flex: .6 }}>
+            <View style={{ flex: .75 }}>
                 <CustomCard
                     title='Todays Wealth'
                     currentValue='73.6L'

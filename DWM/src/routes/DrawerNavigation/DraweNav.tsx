@@ -1,3 +1,17 @@
+/*  Copyright: AnandRathi IT Pvt. Ltd. This code is intellectual property of AnandRathi Group, and is protected by the relevant laws */
+/**
+ * @param - NA
+ * @return -- NA
+ * @Name:- DrawerNav
+ * @Type:- Functional Component
+ * @Role:- For showing DrawerNav
+ * @Sprint:- 
+ * @Created by:- Bhojraj Singh Shekhawat
+ * @Created on:-  01-11-2023
+ * @Last Modified by:- No
+ * @Last modified on:- No
+ */
+
 import React from 'react'
 import BottomNav from '../BottomNavigation/BottomNav'
 import Profile from '../../screens/DrawerNavScreen/Profile'

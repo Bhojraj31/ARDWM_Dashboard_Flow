@@ -5,7 +5,7 @@
 * @Name:- Bhojraj Singh Shekhawat
 * @Type:- Functional Component
 * @Role:- ColorConstants
-* @Sprint:- Sprint 1.0 
+* @Sprint:- 
 * @Created by:- Bhojraj Singh Shekhawat
 * @Created on:-  04-10-2023
 * @Last Modified by:- No

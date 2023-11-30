@@ -1,3 +1,17 @@
+/*  Copyright: AnandRathi IT Pvt. Ltd. This code is intellectual property of AnandRathi Group, and is protected by the relevant laws */
+/**
+ * @param - NA
+ * @return -- NA
+ * @Name:- Strategy
+ * @Type:- Functional Component
+ * @Role:- For showing Strategy
+ * @Sprint:- 
+ * @Created by:- Bhojraj Singh Shekhawat
+ * @Created on:-  01-11-2023
+ * @Last Modified by:- No
+ * @Last modified on:- No
+ */
+
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Card, Text } from 'react-native-paper';
@@ -7,24 +21,23 @@ import { useTheme } from '../../theme/ThemeProvider';
 const Strategy = () => {
 
   const { theme } = useTheme();
-  const { button, text, background } = theme.colors;
-  const [checked1, setChecked1] = React.useState(false);
-  const [checked2, setChecked2] = React.useState(false);
+  const { cardBackground, label, button, text, background } = theme.colors;
+  const [checked1, setChecked1] = React.useState(true);
+  const [checked2, setChecked2] = React.useState(true);
   return (
-    <View style={{ flex: 1, backgroundColor: background, padding: 5 }}>
-
+    <View style={{ flex: 1, backgroundColor: background, padding: 10 }}>
       {/* Card here */}
-      <Card style={{ backgroundColor: text, padding: 10 }} >
+      <Card style={{ backgroundColor: cardBackground, padding: 10 }} >
 
         {/* 1-Row */}
-        <Card.Content style={{ alignSelf: 'center' }}>
+        <Card.Content style={{ alignSelf: 'center'  }}>
           <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-            <Text variant="titleLarge" style={{ color: '#fff', fontWeight:'bold', fontSize: 28 }} >
+            <Text variant="titleLarge" style={{ color: label, fontWeight:'bold', fontSize: 28 }} >
               9.8
             </Text>
-            <Text variant="titleLarge" style={{ color: '#fff', fontWeight:'bold', fontSize: 15 }} > Cr </Text>
+            <Text variant="titleLarge" style={{ color: label, fontWeight:'bold', fontSize: 15 }} > Cr </Text>
           </View>
-          <Text variant="bodyMedium" style={{ color: '#ffffff' }}>Wealth Target</Text>
+          <Text variant="bodyMedium" style={{ color: label }}>Wealth Target</Text>
         </Card.Content>
 
         {/* 2-Row */}
@@ -36,7 +49,7 @@ const Strategy = () => {
               </Text>
               <Text variant="titleLarge" style={{ color: button, fontSize: 15 }} > Lacs </Text>
             </View>
-            <Text variant="bodyMedium" style={{ color: '#ffffff' }}>Current Wealth</Text>
+            <Text variant="bodyMedium" style={{ color: label }}>Current Wealth</Text>
           </View>
           <View>
             <View style={{ flexDirection: 'row' }}>
@@ -45,7 +58,7 @@ const Strategy = () => {
               </Text>
               <Text variant="titleLarge" style={{ color: button, fontSize: 15 }} > Lacs </Text>
             </View>
-            <Text variant="bodyMedium" style={{ color: '#ffffff' }}>Annual Saving</Text>
+            <Text variant="bodyMedium" style={{ color: label }}>Annual Saving</Text>
           </View>
           <View>
             <View style={{ flexDirection: 'row' }}>
@@ -54,7 +67,7 @@ const Strategy = () => {
               </Text>
               <Text variant="titleLarge" style={{ color: button, fontSize: 15 }} > Years </Text>
             </View>
-            <Text variant="bodyMedium" style={{ color: '#ffffff' }}>TimeFrame</Text>
+            <Text variant="bodyMedium" style={{ color: label }}>TimeFrame</Text>
           </View>
         </Card.Content>
 
@@ -69,10 +82,10 @@ const Strategy = () => {
             />
             <View style={{ flexDirection: 'column' }} >
 
-              <Text style={{ color: '#ffffff' }} >
+              <Text style={{ color: label }} >
                 Equity Market
               </Text>
-              <Text style={{ color: '#ffffff' }} >
+              <Text style={{ color: label }} >
                 Protection
               </Text>
             </View>
@@ -87,10 +100,10 @@ const Strategy = () => {
             />
             <View style={{ flexDirection: 'column' }} >
 
-              <Text style={{ color: '#ffffff' }} >
+              <Text style={{ color: label }} >
                 Plan B with NON-PP Structured
               </Text>
-              <Text style={{ color: '#ffffff' }} >
+              <Text style={{ color: label }} >
                 Protection
               </Text>
             </View>
@@ -100,7 +113,7 @@ const Strategy = () => {
         {/* 4-Row */}
         <Card.Content style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }} >
           <View>
-            <Text variant="titleLarge" style={{ color: '#fff', fontWeight:'bold', fontSize: 28 }} >
+            <Text variant="titleLarge" style={{ color: label, fontWeight:'bold', fontSize: 28 }} >
               60
             </Text>
             <Text style={{ color: text }} >
@@ -111,7 +124,7 @@ const Strategy = () => {
 
           </View>
           <View>
-            <Text variant="titleLarge" style={{ color: '#fff', fontWeight:'bold', fontSize: 28 }} >
+            <Text variant="titleLarge" style={{ color: label, fontWeight:'bold', fontSize: 28 }} >
               40
             </Text>
             <Text style={{ color: text }} >

@@ -1,3 +1,17 @@
+/*  Copyright: AnandRathi IT Pvt. Ltd. This code is intellectual property of AnandRathi Group, and is protected by the relevant laws */
+/**
+ * @param - NA
+ * @return -- NA
+ * @Name:- AppNavigation
+ * @Type:- Functional Component
+ * @Role:- For showing Root Stack navigation
+ * @Sprint:- 
+ * @Created by:- Bhojraj Singh Shekhawat
+ * @Created on:-  01-11-2023
+ * @Last Modified by:- No
+ * @Last modified on:- No
+ */
+
 import { DarkTheme, NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 import Home from '../screens/Home';
@@ -9,14 +23,14 @@ import BottomNav from './BottomNavigation/BottomNav';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Portfolio from '../screens/TopNavScreen/Portfolio';
 import CustomHeader from '../components/CustomHeader';
-import CustomCard from '../components/CustomCard';
 import StartApp from '../screens/StartApp';
+import Registration from '../screens/TopNavScreen/Registration';
 
 const Stack = createNativeStackNavigator();
 function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName=''>
+      <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen
           name='Home'
           component={Home}
@@ -75,11 +89,11 @@ function AppNavigator() {
           })}
         />
         <Stack.Screen
-          name='StartApp'
-          component={StartApp}
+          name='Registration'
+          component={Registration}
           options={({ navigation }) => ({
             header: () => (
-              <CustomHeader navigation={navigation} title="StartApp" />
+              <CustomHeader navigation={navigation} title="Registration" />
             ),
           })}
         />
