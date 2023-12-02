@@ -15,9 +15,9 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CustomCard from '../../components/CustomCard'
-import CircularSlideGraph from '../../components/CircularSliderGraph'
+import CustomCircularSlider from '../../components/CustomCircularSlider'
 
-const DashboardScreen2 = () => {
+const TodaysWealth = () => {
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: .75 }}>
@@ -32,12 +32,12 @@ const DashboardScreen2 = () => {
                 />
             </View>
             <View style={{ alignSelf: 'center' }}>
-                <CircularSlideGraph />
+                <CustomCircularSlider />
             </View>
         </View>
     )
 }
 
-export default DashboardScreen2
+export default TodaysWealth
 
 const styles = StyleSheet.create({})

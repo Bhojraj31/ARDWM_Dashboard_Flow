@@ -25,12 +25,18 @@ import Portfolio from '../screens/TopNavScreen/Portfolio';
 import CustomHeader from '../components/CustomHeader';
 import StartApp from '../screens/StartApp';
 import Registration from '../screens/TopNavScreen/Registration';
+import StrategyDetails from '../screens/BottomNavScreen/StrategyDetails';
 
 const Stack = createNativeStackNavigator();
+// ------ React Native Funcational Export Component with styles------
 function AppNavigator() {
+  // ------ Return react native component here ------
   return (
+    // ------ NavigationContainer here ------
     <NavigationContainer>
+      {/* ------ Stack navigation here ------ */}
       <Stack.Navigator initialRouteName='Home'>
+        {/* ------ Bottom Tab navigation Screens here ------ */}
         <Stack.Screen
           name='Home'
           component={Home}
@@ -94,6 +100,15 @@ function AppNavigator() {
           options={({ navigation }) => ({
             header: () => (
               <CustomHeader navigation={navigation} title="Registration" />
+            ),
+          })}
+        />
+        <Stack.Screen
+          name='StrategyDetails'
+          component={StrategyDetails}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="StrategyDetails" />
             ),
           })}
         />

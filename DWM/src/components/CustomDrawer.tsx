@@ -17,20 +17,16 @@ import { StyleSheet, Text, View, Switch, Image, TouchableOpacity } from 'react-n
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
 import { IconButton } from 'react-native-paper'
 import Animated, { interpolate, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
-// import { background, deepskyblue } from '../assets/constants/ColorConstants';
 import { useTheme } from '../theme/ThemeProvider';
 import { lightTheme } from '../theme/Themes';
 
-
+// ------ React Native Funcational Export Component with styles------
 const CustomDrawer = (props: any) => {
-
-    const { theme, toggleTheme } = useTheme(); // Get the current theme and toggle function
+    // ------ Used Theme Here ------
+    const { theme, toggleTheme } = useTheme();
     const { drawerBackground, text, label } = theme.colors;
-
-    const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     const progress = useSharedValue(0);
-
+    // ------ animatedStyle here for open and close custom drawer------
     const animatedStyle = useAnimatedStyle(() => {
         return {
             transform: [
@@ -40,18 +36,19 @@ const CustomDrawer = (props: any) => {
             ],
         };
     });
-
+    // ------ Return react native component here ------
     return (
+         // ------ Parent Animated.View Of this component  ------
         <Animated.View style={[animatedStyle, { flex: 1 }]} >
             <DrawerContentScrollView
                 {...props}
                 contentContainerStyle={{ flex: 1, backgroundColor: drawerBackground }}
             >
-                {/* Drawer Screens */}
+                {/* ------ Drawer Screens ------ */}
                 <View style={{ flex: 1, paddingTop: 10 }}>
                     <DrawerItemList {...props} />
 
-                    {/* theme toggle button here*/}
+                    {/* ------ theme toggle button her ------e*/}
                     <View style={{ width: 120, alignItems: 'center', flexDirection: 'row', marginLeft: 18, marginVertical: 15 }}>
                         <Text style={{ color: text, fontSize: 17, }}>
                             {theme == lightTheme ? 'Dark' : 'Light'} Theme
@@ -64,7 +61,7 @@ const CustomDrawer = (props: any) => {
                                 iconColor={theme == lightTheme ? text : 'white'}
                             />
                         </TouchableOpacity>
-                        {/* <Switch
+                        {/* ------ <Sw ------itch
                             trackColor={{ false: '#767577', true: '#fff' }}
                             thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
                             ios_backgroundColor="#3e3e3e"
@@ -74,7 +71,7 @@ const CustomDrawer = (props: any) => {
                         /> */}
                     </View>
 
-                    {/* Logout button here*/}
+                    {/* ------ Logout button her ------e*/}
                     <TouchableOpacity style={{ width: 200, marginLeft: 18, marginVertical: 15 }}>
                         <Text style={{ color: text, fontSize: 17, }}>
                             Logout
@@ -82,40 +79,40 @@ const CustomDrawer = (props: any) => {
                     </TouchableOpacity>
                 </View>
 
-                {/* Privacy Policy */}
+                {/* ------ Privacy Policy ------ */}
                 <TouchableOpacity style={{ width: 140, alignItems: 'center', marginLeft: 10, marginBottom: 15 }}>
                     <Text style={{ color: label, fontSize: 20, fontWeight: '600', textDecorationLine: "underline" }}>
                         Privacy Policy
                     </Text>
                 </TouchableOpacity>
 
-                {/* Border Line */}
+                {/* ------ Border Line ------ */}
                 <View style={{ marginHorizontal: 10, marginBottom: 0, borderTopWidth: .3, borderColor: text }}></View>
 
-                {/* pofile section */}
+                {/* ------ pofile section ------ */}
                 <View style={{ flex: .3, padding: 10 }}>
                     <View style={{ flexDirection: 'row' }}>
-                        {/* left */}
+                        {/* ------ left ------ */}
                         <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                            {/* User IMG */}
+                            {/* ------ User IMG ------ */}
                             <Image source={require('../assets/images/User.png')} style={{ width: 60, height: 60, }} />
 
-                            {/* Phone Icon */}
+                            {/* ------ Phone Icon ------ */}
                             <IconButton icon="phone" size={25} style={{ margin: 0, marginLeft: 20 }} iconColor={label} />
                         </View>
 
-                        {/* right */}
+                        {/* ------ right ------ */}
                         <View style={{ marginLeft: 15 }}>
-                            {/* Text */}
+                            {/* ------ Text ------ */}
                             <Text style={{ color: text, fontSize: 17 }}>
                                 Wealth Partner
                             </Text>
-                            {/* User's Name */}
+                            {/* ------ User's Name ------ */}
                             <Text style={{ color: text, fontSize: 18 }}>
                                 Ketan K Mistry
                             </Text>
 
-                            {/* User's Phone no. */}
+                            {/* ------ User's Phone no. ------ */}
                             <View>
                                 <Text style={{ color: text, fontSize: 21, marginTop: '15%' }}>
                                     1000002777
@@ -125,12 +122,12 @@ const CustomDrawer = (props: any) => {
                     </View>
 
                     <View style={{ flexDirection: 'row', marginTop: '4%' }}>
-                        {/* App version */}
+                        {/* ------ App version ------ */}
                         <Text style={{ color: text, fontSize: 15, alignSelf: 'center' }}>
                             App version
                         </Text>
 
-                        {/* App version */}
+                        {/* ------ App version ------ */}
                         <Text style={{ color: text, fontSize: 15, marginLeft: 30 }}>
                             v26.1
                         </Text>

@@ -1,32 +1,42 @@
-import * as React from 'react';
-import { View } from 'react-native';
-import { Button, Dialog, Portal, PaperProvider, Text } from 'react-native-paper';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
-const StartApp = () => {
-  const [visible, setVisible] = React.useState(false);
+interface SkillBarProps {
+  percentage: number;
+}
 
-  const showDialog = () => setVisible(true);
-
-  const hideDialog = () => setVisible(false);
-
+const StartApp: React.FC<SkillBarProps> = ({ percentage }) => {
   return (
-    <PaperProvider>
-      <View style={{flex:1,justifyContent:'center', alignItems:'center'}}>
-        <Button onPress={showDialog}>Show Dialog</Button>
-        <Portal>
-          <Dialog visible={visible} onDismiss={hideDialog}>
-            <Dialog.Title>Alert</Dialog.Title>
-            <Dialog.Content>
-              <Text variant="bodyMedium">This is simple dialog</Text>
-            </Dialog.Content>
-            <Dialog.Actions>
-              <Button onPress={hideDialog}>Done</Button>
-            </Dialog.Actions>
-          </Dialog>
-        </Portal>
-      </View>
-    </PaperProvider>
+    <View style={styles.lineContainer}>
+      <View style={styles.line}></View>
+      <View style={[styles.progress, { height: `${percentage}%` }]}></View>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  lineContainer: {
+    width: 5,
+    height: '100%',
+    backgroundColor: 'lightgrey',
+    position: 'relative',
+    left: 200,
+  },
+  line: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'lightgrey',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
+  progress: {
+    width: '100%',
+    backgroundColor: 'blue',
+    position: 'absolute',
+    bottom: 0, 
+    left: 0,
+  },
+});
 
 export default StartApp;

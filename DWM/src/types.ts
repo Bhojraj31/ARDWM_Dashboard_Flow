@@ -22,4 +22,5 @@ type HomeStackParamsList = {
     Activity: object | undefined,
     Transact: object | undefined,
     Registration: object | undefined,
+    StrategyDetails: object | undefined,
 }

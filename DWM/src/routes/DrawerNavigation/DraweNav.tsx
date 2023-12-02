@@ -20,24 +20,26 @@ import CustomHeader from '../../components/CustomHeader';
 import Videos from '../../screens/DrawerNavScreen/Videos';
 import Referral from '../../screens/DrawerNavScreen/Referral';
 import Reports from '../../screens/DrawerNavScreen/Reports';
-import DrawerHeader from '../../components/DrawerHeader';
+import CustomDrawerHeader from '../../components/CustomDrawerHeader';
 import CustomDrawer from '../../components/CustomDrawer';
 import { useTheme } from '../../theme/ThemeProvider';
 
 
 const Drawer = createDrawerNavigator();
+// Empty Method For bottom tab 
 const Empty = () => {
   return (
     <BottomNav />
   )
 }
-
+// ------ React Native Funcational Export Component with styles------
 function DrawerNav() {
-
+  // ------ Used Theme Here ------
   const { theme } = useTheme(); 
   const { text, drawerBackground } = theme.colors;
-
+  // ------ Return react native component here ------
   return (
+    // ------ Drawer navigation here ------
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
@@ -49,12 +51,13 @@ function DrawerNav() {
         }
       }}
     >
+      {/* ------ Drawer navigation Screens here ------ */}
       <Drawer.Screen
         name='Dashboard'
         component={Empty}
         options={({ navigation }) => ({
           header: () => (
-            <DrawerHeader navigation={navigation} title="Bhojraj Wealth Strategy" />
+            <CustomDrawerHeader navigation={navigation} title="Bhojraj Wealth Strategy" />
           ),
         })}
       />

@@ -16,9 +16,9 @@ import React, { useEffect } from 'react';
 import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 import AppNavigator from './routes/AppNavigator';
 import BootSplash from "react-native-bootsplash";
-import { background } from './assets/constants/ColorConstants';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { PaperProvider } from 'react-native-paper';
+import StartApp from './screens/StartApp';
 
 function App(): JSX.Element {
   useEffect(() => {
@@ -27,10 +27,10 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={{
-      flex: 1, backgroundColor: background
+      flex: 1, backgroundColor: '#040D14'
     }}>
       <StatusBar
-        backgroundColor={background}
+        backgroundColor='#040D14'
         barStyle={'light-content'}
       />
       <ThemeProvider>
@@ -39,6 +39,7 @@ function App(): JSX.Element {
         </PaperProvider>
       </ThemeProvider>
     </SafeAreaView>
+    // <StartApp percentage={60}/>
     
   );
 }

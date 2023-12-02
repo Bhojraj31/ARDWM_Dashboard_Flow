@@ -17,25 +17,29 @@ import React, { useState } from 'react'
 import { CircularSlider } from '@v3ron/react-native-circular-slider';
 import { useTheme } from '../theme/ThemeProvider';
 
+// ------ SliderState for startAngle and angleLength ------
 interface SliderState {
     startAngle: number;
     angleLength: number;
 }
-
-const CircularSlideGraph = () => {
+// ------ React Native Funcational Export Component with styles------
+const CustomCircularSlider = () => {
+    // ------ Used Theme Here ------
+    const { theme } = useTheme();
+    const { text, background } = theme.colors;
+    // ------ State for sliderState ------
     const [sliderState, setSliderState] = useState<SliderState>({
         startAngle: 45,
         angleLength: 60,
     });
-
-    const { theme } = useTheme();
-    const { text, background } = theme.colors;
     const { startAngle, angleLength } = sliderState;
-
+    // ------ method for update slider's startAngle or angleLength ------
     const onUpdate = ({ startAngle, angleLength }: SliderState) => {
         setSliderState({ startAngle, angleLength });
     };
+    // ------ Return react native component here ------
     return (
+        // ------ CircularSlider here ------
         <CircularSlider
             strokeWidth={15}
             radius={90}
@@ -50,4 +54,4 @@ const CircularSlideGraph = () => {
     )
 }
 const styles = StyleSheet.create({});
-export default CircularSlideGraph
+export default CustomCircularSlider

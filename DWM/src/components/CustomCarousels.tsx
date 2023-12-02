@@ -12,45 +12,47 @@
  * @Last modified on:- No
  */
 
-import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, FlatList, Dimensions, TouchableOpacity } from 'react-native';
+import React, { useState,} from 'react';
+import { View, Dimensions, TouchableOpacity } from 'react-native';
 import { useTheme } from '../theme/ThemeProvider';
-import DashboardScreen1 from '../screens/DashboardScreens/DashboardScreen1';
-import DashboardScreen2 from '../screens/DashboardScreens/DashboardScreen2';
-import DashboardScreen3 from '../screens/DashboardScreens/DashboardScreen3';
-import DashboardScreen4 from '../screens/DashboardScreens/DashboardScreen4';
-import DashboardScreen5 from '../screens/DashboardScreens/DashboardScreen5';
-import DashboardScreen6 from '../screens/DashboardScreens/DashboardScreen6';
+import TotalPortfolio from '../screens/DashboardScreens/TotalPortfolio';
+import TodaysWealth from '../screens/DashboardScreens/TodaysWealth';
+import ShortTermPortfolio from '../screens/DashboardScreens/ShortTermPortfolio';
+import TaxPortfolio from '../screens/DashboardScreens/TaxPortfolio';
+import NonPPStructuredProduct from '../screens/DashboardScreens/NonPPStructuredProduct';
+import UnutilizedFunds from '../screens/DashboardScreens/UnutilizedFunds';
 import Carousel from 'react-native-reanimated-carousel';
 
+// ------ Get width & heigth from divice here ------
 const { height, width } = Dimensions.get('window');
 
-const Carousels = () => {
+// ------ React Native Funcational Export Component with styles------
+const CustomCarousels = () => {
+  // ------ Used Theme Here ------
   const { theme } = useTheme();
   const { text, background } = theme.colors;
-
-  // Define the components for each index
+  // ------ Define the components for each index ------
   const components = [
-    // null, // Index 0, empty component or placeholder
-    <DashboardScreen1 key={1} />, // Index 1
-    <DashboardScreen2 key={2} />, // Index 2
-    <DashboardScreen3 key={3} />, // Index 3
-    <DashboardScreen4 key={4} />, // Index 4
-    <DashboardScreen5 key={5} />, // Index 5
-    <DashboardScreen6 key={6} />, // Index 6
-    // null, // Index 7, empty component or placeholder
+    <TotalPortfolio key={1} />, 
+    <TodaysWealth key={2} />, 
+    <ShortTermPortfolio key={3} />, 
+    <TaxPortfolio key={4} />, 
+    <NonPPStructuredProduct key={5} />, 
+    <UnutilizedFunds key={6} />, 
   ];
-
+  // ------ State for currentIndex ------
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-
+// ------ Return react native component here ------
   return (
+    // ------ Parent View Of this component  ------
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: background }}>
+      {/* ------ Corousels View Of this component  ------ */}
       <View
         style={{
           height: height - 170,
         }}
       >
+        {/* Carousels Here */}
         <Carousel
           loop
           mode="parallax"
@@ -85,8 +87,7 @@ const Carousels = () => {
           )}
         />
       </View>
-
-      {/* Pagination */}
+      {/* ------ Pagination View Of this component  ------  */}
       <View
         style={{
           flexDirection: 'row',
@@ -116,4 +117,4 @@ const Carousels = () => {
   );
 };
 
-export default Carousels;
+export default CustomCarousels;

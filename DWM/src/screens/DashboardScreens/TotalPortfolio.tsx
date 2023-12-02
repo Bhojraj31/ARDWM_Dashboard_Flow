@@ -2,9 +2,9 @@
 /**
  * @param - NA
  * @return -- NA
- * @Name:- DashboardScreen4
+ * @Name:- DashboardScreen1
  * @Type:- Functional Component
- * @Role:- For showing DashboardScreen4
+ * @Role:- For showing DashboardScreen1
  * @Sprint:- 
  * @Created by:- Bhojraj Singh Shekhawat
  * @Created on:-  01-11-2023
@@ -16,20 +16,20 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CustomCard from '../../components/CustomCard'
 
-const DashboardScreen4 = () => {
+const TotalPortfolio = () => {
     return (
         <CustomCard
-            title='Tax Portfolio'
-            currentValue='-'
-            investment='-'
-            returnRate='-'
-            returnRate1='-'
-            EMP=''
+            title='Total Portfolio'
+            currentValue='80.21L'
+            investment='58.29L'
+            returnRate='37.34L'
+            returnRate1='(10.81%p.a)'
+            EMP='+ Equity Market Protection :-'
             date='15 Aug 2023'
         />
     )
 }
 
-export default DashboardScreen4
+export default TotalPortfolio
 
 const styles = StyleSheet.create({})

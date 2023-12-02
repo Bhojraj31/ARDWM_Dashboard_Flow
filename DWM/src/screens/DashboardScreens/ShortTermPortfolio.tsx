@@ -16,7 +16,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CustomCard from '../../components/CustomCard'
 
-const DashboardScreen3 = () => {
+const ShortTermPortfolio = () => {
     return (
         <CustomCard
             title='Short Term Portfolio'
@@ -30,6 +30,6 @@ const DashboardScreen3 = () => {
     )
 }
 
-export default DashboardScreen3
+export default ShortTermPortfolio
 
 const styles = StyleSheet.create({})

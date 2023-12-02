@@ -21,21 +21,24 @@ import Dashboard from '../../screens/BottomNavScreen/Dashboard';
 import Messages from '../../screens/BottomNavScreen/Messages';
 import { useTheme } from '../../theme/ThemeProvider';
 
+
 const Bottom = createBottomTabNavigator();
-
+// ------ React Native Funcational Export Component with styles------
 const BottomNav = () => {
-
+  // ------ Used Theme Here ------
   const { theme } = useTheme();
-  const { text, background, label, activeTabTintColor, InactiveTintColor } = theme.colors;
+  const { background, activeTabTintColor, InactiveTintColor } = theme.colors;
+  // ------ Used ActiveColor and InactiveColor Here ------
   const ActiveColor = activeTabTintColor;
   const InactiveColor = InactiveTintColor;
+  // ------ Return react native component here ------
   return (
+    // ------ Bottom Tab navigation here ------
     <Bottom.Navigator
       initialRouteName='Main'
       screenOptions={{
         tabBarLabelStyle: {
           fontSize: 13,
-          // color: label,
           fontWeight: 'bold',
         },
         tabBarStyle: {
@@ -45,18 +48,10 @@ const BottomNav = () => {
         tabBarActiveTintColor: activeTabTintColor,
         tabBarInactiveTintColor: InactiveTintColor
       }}>
+      {/* ------ Bottom Tab navigation Screens here ------ */}
       <Bottom.Screen
         name='Strategy'
         component={Strategy}
-        // options={({ navigation }) => ({
-        //   header: () => (
-        //     <CustomHeader navigation={navigation} title="Strategy" />
-        //   ),
-        //   tabBarLabel: 'Strategy',
-        //   tabBarIcon: () => (
-        //     <IconButton icon="chess-knight" size={25} iconColor="white" />
-        //   ),
-        // })}
         options={{
           headerShown: false,
           tabBarLabel: 'Strategy',

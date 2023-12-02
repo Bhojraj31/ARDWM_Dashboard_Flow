@@ -18,7 +18,7 @@ import CustomCard from '../../components/CustomCard'
 import { Card } from 'react-native-paper'
 import { useTheme } from '../../theme/ThemeProvider'
 
-const DashboardScreen6 = () => {
+const UnutilizedFunds = () => {
     const { theme } = useTheme();
     const { button, label, text, cardBackground, background } = theme.colors;
     return (
@@ -71,6 +71,6 @@ const DashboardScreen6 = () => {
     )
 }
 
-export default DashboardScreen6
+export default UnutilizedFunds
 
 const styles = StyleSheet.create({})

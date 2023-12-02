@@ -1174,6 +1174,11 @@
     deepmerge "^3.2.0"
     hoist-non-react-statics "^3.3.0"
 
+"@dppo/react-native-wheely@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@dppo/react-native-wheely/-/react-native-wheely-0.6.0.tgz#29f949675d85b8d11deec6a11f7765fc0d35468a"
+  integrity sha512-1aDumoibp7cz8ogeFHpq7XvhpA55Q+L6u0vfP52iU7eiiOwz4Zo+yDB8zXwJjILNMi/pP1SasddWkywhjSsTbg==
+
 "@egjs/hammerjs@^2.0.17":
   version "2.0.17"
   resolved "https://registry.yarnpkg.com/@egjs/hammerjs/-/hammerjs-2.0.17.tgz#5dc02af75a6a06e4c2db0202cae38c9263895124"
@@ -1713,6 +1718,11 @@
     prompts "^2.4.0"
     semver "^7.5.2"
 
+"@react-native-community/slider@^4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-4.4.3.tgz#9b9dc639b88f5bfda72bd72a9dff55cbf9f777ed"
+  integrity sha512-WdjvGtqJfqcCiLwtbzie53Z/H6w6dIfRHhlW832D89ySAdE5DxLAsqRhDOG0eacuAxxEB+T9sGCkVMD0fa3aBg==
+
 "@react-native/assets-registry@^0.72.0":
   version "0.72.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets-registry/-/assets-registry-0.72.0.tgz#c82a76a1d86ec0c3907be76f7faf97a32bbed05d"
@@ -2157,6 +2167,11 @@
   dependencies:
     d3-interpolate "^3.0.1"
     lodash.range "^3.2.0"
+
+"@vseslav/react-native-horizontal-picker@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@vseslav/react-native-horizontal-picker/-/react-native-horizontal-picker-0.1.1.tgz#748b4cd287988de5e4ff76e2a6454c43e2d37478"
+  integrity sha512-fwnl4NRFxZkTAdLGrxHprsGAun221Q5pMkUyXCPxOBqE1jxDUfCLhhdywT4+KKIOqEx3zfOE1ZZZw45drCcADA==
 
 abort-controller@^3.0.0:
   version "3.0.0"
