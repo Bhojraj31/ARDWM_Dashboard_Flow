@@ -30,7 +30,7 @@ const { height, width } = Dimensions.get('window');
 const CustomCarousels = () => {
   // ------ Used Theme Here ------
   const { theme } = useTheme();
-  const { text, background } = theme.colors;
+  const { label,text, background } = theme.colors;
   // ------ Define the components for each index ------
   const components = [
     <TotalPortfolio key={1} />, 
@@ -106,7 +106,7 @@ const CustomCarousels = () => {
                 width: currentIndex === adjustedIndex ? 10 : 8,
                 height: currentIndex === adjustedIndex ? 10 : 8,
                 borderRadius: currentIndex === adjustedIndex ? 5 : 4,
-                backgroundColor: currentIndex === adjustedIndex ? text : 'rgba(52, 52, 52, 0.8)',
+                backgroundColor: currentIndex === adjustedIndex ? label : text,
                 marginLeft: 5,
               }}
             ></View>

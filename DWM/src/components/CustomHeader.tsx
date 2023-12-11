@@ -35,7 +35,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ navigation, title }) => {
             </TouchableOpacity>
             {/* ------ title for Custom Heder  ------ */}
             <View style={{ flex: .8, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ color: label, fontWeight: 'bold', fontSize: 18 }}>
+                <Text style={{ color: label, fontWeight: '400', fontSize: 18 }}>
                     {title}
                 </Text>
             </View>

@@ -1,41 +1,91 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
+// StartApp.tsx
 
-interface SkillBarProps {
-  percentage: number;
-}
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image } from 'react-native';
 
-const StartApp: React.FC<SkillBarProps> = ({ percentage }) => {
+// interface CustomDropdownProps {
+//   options: string[];
+//   onSelect: (value: string) => void;
+// }
+
+const StartApp = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState<string | null>(null);
+  const [onSelect, setOnSelect]=  useState<string | null>(null);
+  const options = ['Option 1', 'Option 2', 'Option 3'];
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleSelect = (value: string) => {
+    setSelectedValue(value);
+    setOnSelect(value);
+    toggleDropdown();
+  };
+
   return (
-    <View style={styles.lineContainer}>
-      <View style={styles.line}></View>
-      <View style={[styles.progress, { height: `${percentage}%` }]}></View>
+    <View style={styles.container}>
+      <TouchableOpacity onPress={toggleDropdown} style={styles.header}>
+        <Text>{selectedValue || 'Select an option'}</Text>
+        <Image
+          source={require('../assets/images/Arrow.png')} // Replace with your arrow icon
+          style={[styles.arrowIcon, isOpen && styles.rotateArrow]}
+        />
+      </TouchableOpacity>
+      {isOpen && (
+        <View style={styles.dropdown}>
+          <FlatList
+            data={options}
+            renderItem={({ item }) => (
+              <TouchableOpacity onPress={() => handleSelect(item)} style={styles.option}>
+                <Text>{item}</Text>
+              </TouchableOpacity>
+            )}
+            keyExtractor={(item) => item}
+          />
+        </View>
+      )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  lineContainer: {
-    width: 5,
-    height: '100%',
-    backgroundColor: 'lightgrey',
+  container: {
     position: 'relative',
-    left: 200,
   },
-  line: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'lightgrey',
-    position: 'absolute',
-    top: 0,
-    left: 0,
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
   },
-  progress: {
-    width: '100%',
-    backgroundColor: 'blue',
+  arrowIcon: {
+    marginLeft: 'auto',
+    width: 15,
+    height: 15,
+    transform: [{ rotate: '270deg' }],
+  },
+  rotateArrow: {
+    transform: [{ rotate: '90deg' }],
+  },
+  dropdown: {
     position: 'absolute',
-    bottom: 0, 
+    top: '100%',
     left: 0,
+    right: 0,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    marginTop: 5,
+  },
+  option: {
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderTopWidth: 0,
+    borderRadius: 5,
   },
 });
 

@@ -43,6 +43,7 @@ function DrawerNav() {
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
+        drawerPosition: 'left',
         drawerType: "slide",
         drawerActiveTintColor: drawerBackground,
         drawerLabelStyle: {

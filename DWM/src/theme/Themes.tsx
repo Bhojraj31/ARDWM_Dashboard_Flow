@@ -50,7 +50,7 @@ export const lightTheme: Theme = {
   ...defaultTheme,
   colors: {
     background: '#ffffff',
-    drawerBackground: '#F0F0F0',
+    drawerBackground: '#dbd9d9',
     cardBackground: '#e6f7ff',
     button: '#37B4E5',
     buttonBorder: '#37B4E5',

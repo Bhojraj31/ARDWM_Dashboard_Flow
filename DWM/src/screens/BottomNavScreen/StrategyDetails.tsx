@@ -10,6 +10,8 @@ export default function StrategyDetails() {
     // ------ Used Theme Here ------
     const { theme } = useTheme();
     const { background, button, text, label } = theme.colors;
+
+    const { goBack } = useNavigation();
     // ------ Numbers data array testing  for Wheelpicker ------
     const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
     // ------ Return react native component here ------
@@ -35,7 +37,7 @@ export default function StrategyDetails() {
                             options={numbers.map((item) => item.toString())}
                             onChange={(index) => { }}
                             selectedIndicatorStyle={{ backgroundColor: 'transparent', borderTopWidth: 1, borderBottomWidth: 1, borderColor: text }}
-                            itemTextStyle={{ color: label, fontSize: 20 }}
+                            itemTextStyle={{ color: label, fontSize: 20, fontWeight: 'bold' }}
                             containerStyle={{ width: 76, }}
                             itemHeight={50}
                         />
@@ -58,9 +60,8 @@ export default function StrategyDetails() {
                             options={numbers.map((item) => item.toString())}
                             onChange={(index) => { }}
                             selectedIndicatorStyle={{ backgroundColor: 'transparent', borderTopWidth: 1, borderBottomWidth: 1, borderColor: text }}
-                            itemTextStyle={{ color: label, fontSize: 20, }}
+                            itemTextStyle={{ color: label , fontSize: 20, fontWeight: 'bold' }}
                             containerStyle={{ width: 76, }}
-                            // itemStyle={{ marginVertical: 4 }}
                             itemHeight={50}
                         />
                         <Text style={{ textAlignVertical: 'center', color: label, }}>Lacs</Text>
@@ -68,14 +69,15 @@ export default function StrategyDetails() {
                 </View>
             </View>
 
+            {/* ------ Row-3 ------  */}
             <Text style={{ fontSize: 18, color: label, textAlign: 'center', marginTop: 36 }}>
                 Timeframe <Text style={{ color: '#505050' }}>(years)</Text>
             </Text>
             <View style={{ height: 42, marginVertical: 5 }}>
                 <CustomHorizontalPicker />
             </View>
-            <TouchableOpacity style={{ alignSelf: 'center', marginTop: 42 }}>
-                <Text style={{ fontSize: 20, color: button }}>Continue</Text>
+            <TouchableOpacity style={{ alignSelf: 'center', marginTop: 42 }} onPress={goBack}>
+                <Text style={{ fontSize: 20, color: button, fontWeight: 'bold' }}>Continue</Text>
             </TouchableOpacity>
         </View >
     );
@@ -105,7 +107,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignSelf: 'center',
         marginVertical: 10,
-        marginLeft:10,
+        marginLeft: 10,
     },
     lineContainer: {
         width: '2%',

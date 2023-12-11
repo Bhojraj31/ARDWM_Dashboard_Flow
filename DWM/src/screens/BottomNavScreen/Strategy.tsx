@@ -54,7 +54,7 @@ const Strategy = () => {
         {/* ------ 2-Row ------ */}
         <Card.Content style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }} >
           <View>
-            <TouchableOpacity onPress={()=>{navigation.navigate('StrategyDetails')}}>
+            <TouchableOpacity onPress={() => { navigation.navigate('StrategyDetails') }}>
               <View style={{ flexDirection: 'row' }}>
                 <Text variant="titleLarge" style={{ color: button, fontSize: 28 }} >
                   18.0
@@ -65,7 +65,7 @@ const Strategy = () => {
             <Text variant="bodyMedium" style={{ color: label }}>Current Wealth</Text>
           </View>
           <View>
-            <TouchableOpacity onPress={()=>{navigation.navigate('StrategyDetails')}}>
+            <TouchableOpacity onPress={() => { navigation.navigate('StrategyDetails') }}>
               <View style={{ flexDirection: 'row' }}>
                 <Text variant="titleLarge" style={{ color: button, fontSize: 28 }} >
                   1.0
@@ -76,7 +76,7 @@ const Strategy = () => {
             <Text variant="bodyMedium" style={{ color: label }}>Annual Saving</Text>
           </View>
           <View>
-            <TouchableOpacity onPress={()=>{navigation.navigate('StrategyDetails')}}>
+            <TouchableOpacity onPress={() => { navigation.navigate('StrategyDetails') }}>
               <View style={{ flexDirection: 'row' }}>
                 <Text variant="titleLarge" style={{ color: button, fontSize: 28 }} >
                   25
@@ -90,8 +90,8 @@ const Strategy = () => {
 
         {/* ------ 3-Row ------ */}
         <Card.Content style={{ flexDirection: 'row', marginTop: 20 }} >
-          <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-            <Text variant="titleLarge" style={{ color: label, fontWeight: 'bold', fontSize: 28 }} >
+          <View style={{ width: '20%',alignItems: 'flex-start' }}>
+            <Text variant="titleLarge" style={{ color: label, fontWeight: 'bold', fontSize: 28 , alignSelf:'center'}} >
               60
             </Text>
             <Text style={{ color: text }} >
@@ -99,10 +99,12 @@ const Strategy = () => {
             </Text>
           </View>
 
-          <Slider style={{ width: '60%', alignSelf: 'center' }} thumbTintColor={button} maximumTrackTintColor={text} minimumTrackTintColor={button} />
-
-          <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-            <Text variant="titleLarge" style={{ color: label, fontWeight: 'bold', fontSize: 28 }} >
+          <View style={{ width: '60%', marginTop:5,alignSelf: 'center', alignItems: 'center' }}>
+            <Slider style={{ width: '100%', alignSelf: 'center' }} thumbTintColor={button} maximumTrackTintColor={text} minimumTrackTintColor={button} />
+            <Text style={{ color: label,  fontSize:15 }} >Asset Allocation </Text>
+          </View>
+          <View style={{ width: '20%', alignItems: 'flex-end' }}>
+            <Text variant="titleLarge" style={{ color: label, fontWeight: 'bold', fontSize: 28 , alignSelf:'center'}} >
               40
             </Text>
             <Text style={{ color: text }} >
@@ -141,7 +143,7 @@ const Strategy = () => {
             </Text>
           </View>
         </Card.Content>
-        
+
         {/* ------ 5-Row (but only when click on checked1) ------ */}
         {
           !checked1 &&
@@ -149,7 +151,7 @@ const Strategy = () => {
             <Text style={{ color: text, textAlign: "center", fontSize: 12, margin: 20 }}>Gain/Loss Estimate for 18.0Lacs over 3 years</Text>
             <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-evenly' }}>
               <Text style={{ color: text, textAlign: 'center', }}>NIFTY{'\n'}Return</Text>
-              <Text style={{ color: text, textAlign: 'center', }}>100% {'\n'}Protection</Text>
+              <Text style={{ color: text, textAlign: 'center', }}>Equity Market{'\n'}Protection</Text>
               <Text style={{ color: text, textAlign: 'center', }}>No {'\n'}Protection</Text>
             </View>
 
@@ -157,11 +159,11 @@ const Strategy = () => {
               <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
                 <Text style={{ textAlignVertical: 'center', color: text, fontSize: 10, marginLeft: -25 }}>Historical</Text>
                 <WheelPicker
-                  selectedIndex={10}
-                  options={numbers.map((item, i) => item.toString())}
+                  selectedIndex={9}
+                  options={numbers.map((item) => item.toString())}
                   onChange={(index) => { }}
-                  // style={{ flexDirection: 'row' }}
                   selectedIndicatorStyle={{ backgroundColor: 'transparent', borderTopWidth: 1, borderBottomWidth: 1, borderColor: text }}
+                  itemTextStyle={{ color: label, fontSize: 20, fontWeight: 'bold' }}
                   visibleRest={1}
                 />
                 <Text style={{ textAlignVertical: 'center', color: text, fontSize: 14, }}>%</Text>
@@ -179,7 +181,7 @@ const Strategy = () => {
         }
       </Card>
 
-       {/* ------ Custom view visibale when click on checked2 ------ */}
+      {/* ------ Custom view visibale when click on checked2 ------ */}
       {
         checked2 === false && checked1 === true &&
         <View style={{ marginTop: 160, margin: 80, padding: 10, }}>

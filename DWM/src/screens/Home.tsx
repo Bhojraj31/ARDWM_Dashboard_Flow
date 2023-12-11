@@ -26,7 +26,7 @@ function Home() {
   const { label, background } = theme.colors;
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: background }} >
-      <Text style={{ fontSize: 30, fontWeight: 'bold', color: label }} onPress={() => { navigation.navigate('DrawerNav') }}>
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: label }} onPress={() => { navigation.navigate('RightDrawerNav') }}>
         Get Start
       </Text>
 

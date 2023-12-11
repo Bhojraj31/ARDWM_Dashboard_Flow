@@ -69,8 +69,9 @@ const CustomCard: React.FC<CustomCardProps> = ({ title, currentValue, investment
                     {/* ------ Used Tooltip Here on returnRate ----- */}
                     <Tooltip
                         isVisible={toolTipVisible}
+                        contentStyle={{backgroundColor:cardBackground}}
                         content={
-                            <View style={{ width: 250, height: 170, padding: 10 }}>
+                            <View style={{ width: 250,padding: 10 }}>
                                 <Text style={{ fontSize: 18, color: label, fontWeight: 'bold' }}>
                                     Returns
                                 </Text>
@@ -117,8 +118,9 @@ const CustomCard: React.FC<CustomCardProps> = ({ title, currentValue, investment
                     {/* ------ Used Tooltip Here on returnRate in % ----- */}
                     <Tooltip
                         isVisible={toolTipVisible1}
+                        contentStyle={{backgroundColor:cardBackground}}
                         content={
-                            <View style={{ width: 250, height: 120, padding: 5 }}>
+                            <View style={{ width: 250, padding: 6}}>
                                 <Text style={{ fontSize: 15, color: label, textAlign: 'justify' }}>
                                     This IRR may not be reflective of
                                     expected long-term returns because
@@ -194,7 +196,7 @@ const CustomCard: React.FC<CustomCardProps> = ({ title, currentValue, investment
                     </TouchableOpacity>
                     {/* ------ Dialog Used Here for Showing Dialog box when click on **Value as on**   ----- */}
                     <Portal>
-                        <Dialog visible={dialogVoxVisible} onDismiss={hideDialog} style={{ borderRadius: 15 }}>
+                        <Dialog visible={dialogVoxVisible} onDismiss={hideDialog} style={{ borderRadius: 15, backgroundColor:cardBackground }}>
                             <Dialog.Content style={{ padding: 10 }}>
                                 <Text style={{ fontSize: 15, color: label, textAlign: 'center' }}>
                                     For valuation accuracy of all the schemes please check the data post 4:00 PM

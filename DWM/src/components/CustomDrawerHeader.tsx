@@ -16,6 +16,7 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, Image, Text } from 'react-native';
 import { IconButton, ActivityIndicator } from 'react-native-paper';
 import { useTheme } from '../theme/ThemeProvider';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 // ------ CustomHeaderProps for passing values's to the child ------
 interface CustomHeaderProps {
@@ -24,7 +25,10 @@ interface CustomHeaderProps {
 }
 // ------ React Native Funcational Export Component with styles------
 const CustomDrawerHeader: React.FC<CustomHeaderProps> = ({ navigation, title }) => {
+    // const RightNavigation = useNavigation<NavigationProp<HomeStackParamsList>>()
     const { openDrawer } = navigation;
+    // console.log(navigation);
+    
     // ------ Used Theme Here ------
     const { theme } = useTheme();
     const { label, button, background } = theme.colors;
@@ -63,7 +67,7 @@ const CustomDrawerHeader: React.FC<CustomHeaderProps> = ({ navigation, title }) 
                     </TouchableOpacity>
                 )}
                 {/* ------ Right side drawer button for Family member   ------ */}
-                <TouchableOpacity onPress={openDrawer}>
+                <TouchableOpacity onPress={()=>navigation.getParent('RightDrawer').openDrawer()}>
                     <IconButton icon="account-group" size={18} iconColor='#fff' style={{ margin: null, borderRadius: 50, backgroundColor: button }} />
                 </TouchableOpacity>
             </View>

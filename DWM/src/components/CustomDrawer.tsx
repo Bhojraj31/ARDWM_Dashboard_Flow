@@ -48,7 +48,7 @@ const CustomDrawer = (props: any) => {
                 <View style={{ flex: 1, paddingTop: 10 }}>
                     <DrawerItemList {...props} />
 
-                    {/* ------ theme toggle button her ------e*/}
+                    {/* ------ theme toggle button here ------*/}
                     <View style={{ width: 120, alignItems: 'center', flexDirection: 'row', marginLeft: 18, marginVertical: 15 }}>
                         <Text style={{ color: text, fontSize: 17, }}>
                             {theme == lightTheme ? 'Dark' : 'Light'} Theme
@@ -61,14 +61,6 @@ const CustomDrawer = (props: any) => {
                                 iconColor={theme == lightTheme ? text : 'white'}
                             />
                         </TouchableOpacity>
-                        {/* ------ <Sw ------itch
-                            trackColor={{ false: '#767577', true: '#fff' }}
-                            thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-                            ios_backgroundColor="#3e3e3e"
-                            onValueChange={toggleSwitch}
-                            value={isEnabled}
-                            style={{ marginLeft: 20 }}
-                        /> */}
                     </View>
 
                     {/* ------ Logout button her ------e*/}

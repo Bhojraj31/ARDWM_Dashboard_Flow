@@ -18,7 +18,6 @@ import AppNavigator from './routes/AppNavigator';
 import BootSplash from "react-native-bootsplash";
 import { ThemeProvider } from './theme/ThemeProvider';
 import { PaperProvider } from 'react-native-paper';
-import StartApp from './screens/StartApp';
 
 function App(): JSX.Element {
   useEffect(() => {
@@ -39,8 +38,7 @@ function App(): JSX.Element {
         </PaperProvider>
       </ThemeProvider>
     </SafeAreaView>
-    // <StartApp percentage={60}/>
-    
+
   );
 }
 

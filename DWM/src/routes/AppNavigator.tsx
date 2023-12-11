@@ -23,9 +23,13 @@ import BottomNav from './BottomNavigation/BottomNav';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Portfolio from '../screens/TopNavScreen/Portfolio';
 import CustomHeader from '../components/CustomHeader';
-import StartApp from '../screens/StartApp';
 import Registration from '../screens/TopNavScreen/Registration';
 import StrategyDetails from '../screens/BottomNavScreen/StrategyDetails';
+import RightDrawerNav from './DrawerNavigation/RightDrawerNav';
+import Invest from '../screens/TopNavScreen/TransactScreens/Invest';
+import Switch from '../screens/TopNavScreen/TransactScreens/Switch';
+import Withdraw from '../screens/TopNavScreen/TransactScreens/Withdraw';
+import SwitchDetails from '../screens/TopNavScreen/TransactScreens/SwitchScreens/SwitchDetails';
 
 const Stack = createNativeStackNavigator();
 // ------ React Native Funcational Export Component with styles------
@@ -40,6 +44,13 @@ function AppNavigator() {
         <Stack.Screen
           name='Home'
           component={Home}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name='RightDrawerNav'
+          component={RightDrawerNav}
           options={{
             headerShown: false
           }}
@@ -104,11 +115,47 @@ function AppNavigator() {
           })}
         />
         <Stack.Screen
+          name='Invest'
+          component={Invest}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="Invest" />
+            ),
+          })}
+        />
+        <Stack.Screen
+          name='Switch'
+          component={Switch}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="Switch" />
+            ),
+          })}
+        />
+        <Stack.Screen
+          name='Withdraw'
+          component={Withdraw}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="Withdraw" />
+            ),
+          })}
+        />
+        <Stack.Screen
+          name='SwitchDetails'
+          component={SwitchDetails}
+          options={({ navigation }) => ({
+            header: () => (
+              <CustomHeader navigation={navigation} title="SwitchDetails" />
+            ),
+          })}
+        />
+        <Stack.Screen
           name='StrategyDetails'
           component={StrategyDetails}
           options={({ navigation }) => ({
             header: () => (
-              <CustomHeader navigation={navigation} title="StrategyDetails" />
+              <CustomHeader navigation={navigation} title="Set Wealth Target" />
             ),
           })}
         />
