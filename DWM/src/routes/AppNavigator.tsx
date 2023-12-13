@@ -12,7 +12,7 @@
  * @Last modified on:- No
  */
 
-import { DarkTheme, NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 import Home from '../screens/Home';
 import DrawerNav from './DrawerNavigation/DraweNav';
@@ -40,7 +40,7 @@ function AppNavigator() {
     <NavigationContainer>
       {/* ------ Stack navigation here ------ */}
       <Stack.Navigator initialRouteName='Home'>
-        {/* ------ Bottom Tab navigation Screens here ------ */}
+        {/* ------ Stack navigation Screens here ------ */}
         <Stack.Screen
           name='Home'
           component={Home}
@@ -160,9 +160,6 @@ function AppNavigator() {
           })}
         />
       </Stack.Navigator>
-
-
-
     </NavigationContainer>
   )
 }

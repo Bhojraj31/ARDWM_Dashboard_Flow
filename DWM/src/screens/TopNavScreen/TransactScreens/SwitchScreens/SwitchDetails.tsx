@@ -187,7 +187,7 @@ const SwitchDetails = () => {
             </Card>
 
             {/* Switch From > Switch to box here */}
-            <View style={[styles.row, { justifyContent: 'space-between', marginVertical: 20 }]}>
+            <View style={[styles.row, { justifyContent: 'space-between', marginVertical: 10 }]}>
                 {/* col-1 */}
                 <View style={[styles.col, { borderColor: text }]}>
                     <Text style={[styles.subHeading, { color: label }]}>Switch from </Text>
@@ -259,7 +259,7 @@ const SwitchDetails = () => {
             </View>
 
             {/* Sell and buy top-tab here*/}
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginVertical: 20 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
                 <TouchableOpacity onPress={() => { callSell() }} style={{ width: '45%', backgroundColor: isShowSell ? button : background, borderWidth: .5, borderTopLeftRadius: 5, borderBottomLeftRadius: 5, borderColor: button }}>
                     <Text style={[styles.text, { color: isShowSell ? background : button, textAlign: 'center' }]}>
                         Sell
@@ -273,17 +273,39 @@ const SwitchDetails = () => {
             </View>
 
             {/* Text here */}
-            <Text style={[styles.text, { color: text, marginVertical: 0 }]}>
+            <Text style={[styles.text, {color: text }]}>
                 This is a tentative buy list. We will send you a final buy order based on the proceeds received from executing the sell order of switch
             </Text>
             <View style={{ width: '90%', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={[styles.text, { color: text }]}>
+                <Text style={[styles.subHeading, { fontWeight: '200', color: text }]}>
                     Switch in
                 </Text>
-                <Text style={[styles.text, { color: text }]}>
+                <Text style={[styles.subHeading, { fontWeight: '200', color: text }]}>
                     Allocation
                 </Text>
             </View>
+
+            {
+                isShowBuy &&
+                <View style={{ position: 'absolute', bottom: 40, alignSelf: 'center' }} >
+                    <TouchableOpacity >
+                        <Text style={{ color: button, fontSize: 18 }} >
+                            Confirm
+                        </Text>
+                    </TouchableOpacity>
+                </View >
+            }
+
+            {
+                isShowSell &&
+                <View style={{ position: 'absolute', bottom: 40, alignSelf: 'center' }} >
+                    <TouchableOpacity >
+                        <Text style={{ color: button, fontSize: 18 }} >
+                            Confirm
+                        </Text>
+                    </TouchableOpacity>
+                </View >
+            }
         </View>
     )
 }

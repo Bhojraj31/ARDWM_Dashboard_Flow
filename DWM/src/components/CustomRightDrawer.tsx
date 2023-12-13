@@ -21,6 +21,7 @@ import { IconButton } from 'react-native-paper';
 
 // ------ React Native Funcational Export Component with styles------
 const CustomRightDrawer = (props: any) => {
+    const { navigation } = props;
     // ------ Used Theme Here ------
     const { theme, toggleTheme } = useTheme();
     const { drawerBackground, button, label, text } = theme.colors;
@@ -72,7 +73,7 @@ const CustomRightDrawer = (props: any) => {
     }
 
     const renderItem = ({ item }: { item: ListItem }) => (
-        <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 50, paddingVertical: 5, borderBottomWidth: 0.5, borderBottomColor: text }}>
+        <TouchableOpacity onPress={() => navigation.closeDrawer()} style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 50, paddingVertical: 5, borderBottomWidth: 0.5, borderBottomColor: text }}>
             <View style={{ width: 35, height: 35, backgroundColor: button, borderRadius: 50, alignItems: 'center', justifyContent: 'center' }}>
                 <Text style={{ color: label }}>{`${item.firstname.charAt(0)}${item.lastname.charAt(0)}`}</Text>
             </View>
@@ -83,7 +84,7 @@ const CustomRightDrawer = (props: any) => {
     );
 
     const renderSectionHeader = ({ section: { title } }: { section: Section }) => (
-        <TouchableOpacity style={[styles.row, { borderBottomColor: text }]}>
+        <TouchableOpacity onPress={() => navigation.closeDrawer()} style={[styles.row, { borderBottomColor: text }]}>
             <IconButton icon="account-group" size={18} iconColor="#fff" style={{ margin: null, borderRadius: 50, backgroundColor: button }} />
             <Text style={[styles.header, { color: label }]}>{title}</Text>
         </TouchableOpacity>
@@ -118,16 +119,12 @@ const styles = StyleSheet.create({
         borderBottomWidth: .5,
     },
     item: {
-        // backgroundColor: '#f9c2ff',
         padding: 10,
         paddingVertical: 15,
-        // marginLeft: 8,
     },
     header: {
         fontSize: 20,
         alignSelf: 'center'
-        // backgroundColor: '#fff',
-        // marginLeft:8,
     },
     title: {
         fontSize: 16,

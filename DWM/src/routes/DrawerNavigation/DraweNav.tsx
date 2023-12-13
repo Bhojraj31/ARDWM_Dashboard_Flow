@@ -35,7 +35,7 @@ const Empty = () => {
 // ------ React Native Funcational Export Component with styles------
 function DrawerNav() {
   // ------ Used Theme Here ------
-  const { theme } = useTheme(); 
+  const { theme } = useTheme();
   const { text, drawerBackground } = theme.colors;
   // ------ Return react native component here ------
   return (
@@ -55,12 +55,10 @@ function DrawerNav() {
       {/* ------ Drawer navigation Screens here ------ */}
       <Drawer.Screen
         name='Dashboard'
-        component={Empty}
-        options={({ navigation }) => ({
-          header: () => (
-            <CustomDrawerHeader navigation={navigation} title="Bhojraj Wealth Strategy" />
-          ),
-        })}
+        component={BottomNav}
+        options={{
+          headerShown: false
+        }}
       />
       <Drawer.Screen
         name='Profile'

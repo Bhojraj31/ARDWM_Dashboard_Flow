@@ -20,6 +20,7 @@ import Strategy from '../../screens/BottomNavScreen/Strategy';
 import Dashboard from '../../screens/BottomNavScreen/Dashboard';
 import Messages from '../../screens/BottomNavScreen/Messages';
 import { useTheme } from '../../theme/ThemeProvider';
+import CustomDrawerHeader from '../../components/CustomDrawerHeader';
 
 
 const Bottom = createBottomTabNavigator();
@@ -52,35 +53,41 @@ const BottomNav = () => {
       <Bottom.Screen
         name='Strategy'
         component={Strategy}
-        options={{
-          headerShown: false,
+        options={({ navigation }) => ({
+          header: () => (
+            <CustomDrawerHeader navigation={navigation} showRefresh={false}  title="Bhojraj Wealth Strategy" />
+          ),
           tabBarLabel: 'Strategy',
           tabBarIcon: ({ focused, color }) => (
             <IconButton icon="chess-knight" size={25} iconColor={focused ? ActiveColor : InactiveColor} />
           ),
-        }}
+        })}
       />
       <Bottom.Screen
         name='Main'
         component={Dashboard}
-        options={{
-          headerShown: false,
+        options={({ navigation }) => ({
+          header: () => (
+            <CustomDrawerHeader navigation={navigation} title="Bhojraj Wealth Strategy" />
+          ),
           tabBarLabel: 'Dashboard',
           tabBarIcon: ({ focused, color }) => (
             <IconButton icon="speedometer" size={25} iconColor={focused ? ActiveColor : InactiveColor} />
           ),
-        }}
+        })}
       />
       <Bottom.Screen
         name='Messages'
         component={Messages}
-        options={{
-          headerShown: false,
+        options={({ navigation }) => ({
+          header: () => (
+            <CustomDrawerHeader navigation={navigation} showRefresh={false} showFamilyButton={false} title="Bhojraj Wealth Strategy" />
+          ),
           tabBarLabel: 'Messages',
           tabBarIcon: ({ focused, color }) => (
             <IconButton icon="wechat" size={25} iconColor={focused ? ActiveColor : InactiveColor} />
           ),
-        }}
+        })}
       />
     </Bottom.Navigator>
 
